@@ -41,31 +41,10 @@ function optionsframework_options() {
 		"type" => "heading" );
 
 	$options[] = array( "name" => "Select a Stylesheet to be Loaded",
-		"desc" => "This is a manually defined list of stylesheets.",
 		"id" => "stylesheet",
 		"std" => "0",
 		"type" => "select",
 		"options" => $defined_stylesheets );
 
 	return $options;
-}
-
-/**
- * Returns an array of all files in $directory_path of type $filetype.
- *
- * The $directory_uri + file name is used for the key
- * The file name is the value
- */
- 
-function options_stylesheets_get_file_list( $directory_path, $filetype, $directory_uri ) {
-	$alt_stylesheets = array();
-	$alt_stylesheet_files = array();
-	if ( is_dir( $directory_path ) ) {
-		$alt_stylesheet_files = glob( $directory_path . "*.$filetype");
-		foreach ( $alt_stylesheet_files as $file ) {
-			$file = str_replace( $directory_path, "", $file);
-			$alt_stylesheets[ $directory_uri . $file] = $file;
-		}
-	}
-	return $alt_stylesheets;
 }
