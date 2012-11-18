@@ -23,7 +23,7 @@
       <div class="row">
       	<div class="twelve columns">
       		<span class="comments">
-      		  <?php comments_popup_link( __( ' comment <i class="icon-comments-alt"></i>', 'dink' ), __( '1 Comment', 'dink' ), __( '% Comments', 'dink' )); ?>
+      		  <?php comments_popup_link( __( '<i class="icon-plus"></i> comment', 'dink' ), __( '<i class="icon-comment-alt"></i> 1 Comment', 'dink' ), __( '<i class="icon-comments-alt"></i> % Comments', 'dink' )); ?>
       		</span>
       	</div><!--/.twelve -->
       </div><!--/.row -->
