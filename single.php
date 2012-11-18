@@ -27,7 +27,7 @@
 			<footer class="entry-footer">
   		  <div class="row">
   		  	<div class="twelve columns">
-  		  		<?php the_tags('<span class="muted"><i class="icon-tag"></i> </span> ', ', ', ''); ?>
+  		  		<?php the_tags('<span class="muted"><i class="icon-tags"></i> </span> ', ', ', ''); ?>
   		  		<div class="pull-right">Posted in <strong><?php the_category(', '); ?></strong></div>
   		  	</div><!--/.twelve -->
   		  </div><!--/.row -->

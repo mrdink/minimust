@@ -16,7 +16,8 @@ License URI: http://opensource.org/licenses/mit-license.php
 @import url("stylesheets/foundation.min.css");
 @import url("stylesheets/fancybox.min.css");
 @import url("stylesheets/highlight.monokai.css");
-@import url("stylesheets/icons.css");
+@import url("stylesheets/font-awesome.css");
+[if IE 7] @import url("stylesheets/font-awesome-ie7.css");
 /* ==========================================================================
    Misc
    ========================================================================== */
