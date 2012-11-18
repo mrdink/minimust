@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Mint
+   ========================================================================== */
+::selection { background: #11af48 }
+::-webkit-selection { background: #11af48 }
+::-moz-selection { background: #11af48 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { color: #11af48 }
+a { color: #419d14 }
+a:hover { color: #11af48 }
+a:focus { color: #419d14 }
+ul.pagination li.current a { background: #419d14 }
+ul.pagination li.current a:hover { background: #11af48 }
+.button {
+    background: #419d14;
+    border: 1px solid #11af48;
+}
+.button:hover { background-color: #11af48 }

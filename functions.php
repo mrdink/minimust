@@ -25,7 +25,7 @@ if (function_exists('add_theme_support'))
 
     // Enables custom header image
     add_theme_support('custom-header', array(
-      'default-image'			=> 'http://i.mrdk.in/200x200/ef3e42/fff',
+      'default-image'			=> 'http://i.mrdk.in/200x200/333/fff',
       'header-text'			=> false,
       'width'				=> 200,
       'height'			=> 200,
@@ -36,6 +36,46 @@ if (function_exists('add_theme_support'))
       'default-color' => 'f5f5f5',
       'default-image' => get_template_directory_uri() . '/images/noise.png'
     ));
+}
+
+// Theme Options
+if ( !function_exists( 'of_get_option' ) ) {
+function of_get_option($name, $default = false) {
+	
+	$optionsframework_settings = get_option('optionsframework');
+	
+	// Gets the unique option id
+	$option_name = $optionsframework_settings['id'];
+	
+	if ( get_option($option_name) ) {
+		$options = get_option($option_name);
+	}
+		
+	if ( isset($options[$name]) ) {
+		return $options[$name];
+	} else {
+		return $default;
+	}
+}
+}
+
+function optionsframework_custom_scripts() { ?>
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+
+	jQuery('#example_showhidden').click(function() {
+  		jQuery('#section-example_text_hidden').fadeToggle(400);
+	});
+	
+	if (jQuery('#example_showhidden:checked').val() !== undefined) {
+		jQuery('#section-example_text_hidden').show();
+	}
+	
+});
+</script>
+ 
+<?php
 }
 
 /*
@@ -92,14 +132,18 @@ function add_jquery_fallback()
     echo $jqueryfallback;
 }
 
+// Pre-defined stylesheets
+function options_stylesheets_alt_style()   {
+	if ( of_get_option('stylesheet') ) {
+		wp_enqueue_style( 'options_stylesheets_alt_style', of_get_option('stylesheet'), array(), null );
+	}
+}
+
 // Theme Stylesheets using Enqueue
 function dink_styles()
 {
     wp_register_style('dink', get_template_directory_uri() . '/style.css', array(), '1.0', 'all');
     wp_enqueue_style('dink'); // Enqueue it!
-
-    /* wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Carrois+Gothic+SC');
-    wp_enqueue_style( 'googleFonts'); */ // Enqueue it!
 }
 
 // Register Navigation
@@ -310,10 +354,12 @@ function theme_t_wp_submit_button( $button, $form ){
  */
 
 // Add Actions
+add_action('optionsframework_custom_scripts', 'optionsframework_custom_scripts'); // Theme Options
 add_action('init', 'dink_scripts'); // Add Custom Scripts
 add_action('wp_footer', 'add_google_analytics'); // Google Analytics optimised in footer
 add_action('wp_footer', 'add_jquery_fallback'); // jQuery fallbacks loaded through footer
 add_action('wp_enqueue_scripts', 'dink_styles'); // Add Theme Stylesheet
+add_action( 'wp_enqueue_scripts', 'options_stylesheets_alt_style' ); // Pre-defined stylesheets
 add_action('init', 'register_dink_menu'); // Add Menu
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 

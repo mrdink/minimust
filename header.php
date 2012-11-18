@@ -34,7 +34,7 @@
       	<div class="nine columns centered">
         	<nav class="top-bar">
             <ul>
-              <li class="name"><h1><a href="<?php echo site_url(); ?>"><?php bloginfo('title'); ?></a></h1></li>
+              <li class="name"><h1 id="site-title"><a href="<?php echo site_url(); ?>"><?php bloginfo('title'); ?></a></h1></li>
               <li class="toggle-topbar"><a href="#"></a></li>
             </ul>
             <section>

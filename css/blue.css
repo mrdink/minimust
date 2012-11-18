@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Blue
+   ========================================================================== */
+::selection { background: #2ba6cb }
+::-webkit-selection { background: #2ba6cb }
+::-moz-selection { background: #2ba6cb }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { color: #2795b6 }
+a { color: #2ba6cb }
+a:hover { color: #2795b6 }
+a:focus { color: #2ba6cb }
+ul.pagination li.current a { background: #2ba6cb }
+ul.pagination li.current a:hover { background: #2795b6 }
+.button {
+    background: #2ba6cb;
+    border: 1px solid #2795b6;
+}
+.button:hover { background-color: #2795b6 }
