@@ -49,11 +49,9 @@
     <section id="brand">
     	<div class="row">
     		<div class="eight columns centered">
-          <div class="brand">
-            <a href="<?php echo site_url(); ?>">
-              <img class="img-circle" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="<?php bloginfo('title'); ?>" />
-            </a>
-          </div>
+          <a href="<?php echo site_url(); ?>">
+            <h1 class="brand hide-text" style="background-image:url('<?php header_image(); ?>');"><?php bloginfo('name'); ?></h1>
+          </a>
     		</div><!--/.twelve -->
     	</div><!--/.row -->
     </section>

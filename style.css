@@ -160,17 +160,19 @@ body { height: 100% }
 .current-menu-item,
 .current-post-ancestor { background-color: #ffffff !important }
 .brand {
-    margin-top: 30px;
-    margin-bottom: 40px;
-    border-radius: 500px;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
     box-shadow: inset 0 40px 50px rgba(0,0,0,0.2),inset 0 -40px 50px rgba(0,0,0,0.2),inset 0 0 3px 1px rgba(0,0,0,0.3),0 0 3px 1px rgba(0,0,0,0.2);
     border: 5px solid #fff;
+    background-repeat: no-repeat !important;
+    margin-top: 30px;
+    margin-bottom: 40px;
     margin-left: auto;
     text-align: center;
     margin-right: auto;
-    height: 200px;
-    width: 200px;
 }
+.brand:hover { box-shadow: inset 0 50px 30px rgba(0,0,0,0),inset 0 -50px 30px rgba(0,0,0,0),inset 0 0 3px 1px rgba(0,0,0,0.3),0 0 3px 1px rgba(0,0,0,0.2) }
 .img-circle {
     -webkit-border-radius: 500px;
     -moz-border-radius: 500px;
