@@ -25,7 +25,7 @@ if (function_exists('add_theme_support'))
 
     // Enables custom header image
     add_theme_support('custom-header', array(
-      'default-image'			=> 'http://i.mrdk.in/200x200/ef3e42/fff',
+      'default-image'			=> 'http://i.mrdk.in/200x200/333/fff',
       'header-text'			=> false,
       'width'				=> 200,
       'height'			=> 200,
