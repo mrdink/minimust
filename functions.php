@@ -49,20 +49,17 @@ function dink_scripts()
 {
     if (!is_admin()) {
         wp_deregister_script('jquery'); // Deregister WordPress jQuery
-        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js', array(), '1.8.2'); // Load Google CDN jQuery
+        wp_register_script('jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js', array(), '1.8.3'); // Load Google CDN jQuery
         wp_enqueue_script('jquery'); // Enqueue it!
 
         wp_register_script('foundation', get_template_directory_uri() . '/javascripts/foundation.min.js', array('jquery'), '3.2.2'); // Foundation
         wp_enqueue_script('foundation'); // Enqueue it!
 
-        wp_register_script('fancybox', get_template_directory_uri() . '/javascripts/fancybox.min.js', array('jquery'), '2.0.3'); // Foundation
+        wp_register_script('fancybox', get_template_directory_uri() . '/javascripts/fancybox.min.js', array('jquery'), '2.0.3'); // Fancybox
         wp_enqueue_script('fancybox'); // Enqueue it!
 
-        wp_register_script('highlight', get_template_directory_uri() . '/javascripts/highlight.min.js', array('jquery'), '1.0'); // Foundation
+        wp_register_script('highlight', get_template_directory_uri() . '/javascripts/highlight.min.js', array('jquery'), '1.0'); // Highlight
         wp_enqueue_script('highlight'); // Enqueue it!
-
-        wp_register_script('modernizr', get_template_directory_uri() . '/javascripts/modernizr.foundation.js', array('jquery'), '2.6.2'); // Modernizr
-        wp_enqueue_script('modernizr'); // Enqueue it!
 
         wp_register_script('dinkscripts', get_template_directory_uri() . '/javascripts/app.js', array('jquery'), '1.0.0'); // Initialize js scripts
         wp_enqueue_script('dinkscripts'); // Enqueue it!
@@ -87,7 +84,7 @@ function add_jquery_fallback()
 {
     $jqueryfallback = "<!-- Protocol Relative jQuery fall back if Google CDN offline -->";
     $jqueryfallback .= "<script>";
-    $jqueryfallback .= "window.jQuery || document.write('<script src=\"" . get_template_directory_uri() . "/javascripts/jquery.js\"><\/script>')";
+    $jqueryfallback .= "window.jQuery || document.write('<script src=\"" . get_template_directory_uri() . "/javascripts/jquery-1.8.3.min.js\"><\/script>')";
     $jqueryfallback .= "</script>";
     echo $jqueryfallback;
 }
